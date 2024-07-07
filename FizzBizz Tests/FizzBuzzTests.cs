@@ -5,8 +5,6 @@ namespace FizzBuzz_Tests
 {
     public class FizzBuzzTests
     {
-        private readonly FizzBuzz _fizzBuzz = new();
-
         [Test]
         public void Calculate_WhenCalledWithMultipleOfThree_ReturnsFizz([Values(3,63,99)] int value)
         {
@@ -14,7 +12,7 @@ namespace FizzBuzz_Tests
             const string expectedResult = "Fizz";
 
             //act
-            var result = _fizzBuzz.Calculate(value);
+            var result = FizzBuzz.Calculate(value);
 
             //assert
             result.Should().Be(expectedResult);
@@ -27,20 +25,20 @@ namespace FizzBuzz_Tests
             const string expectedResult = "Buzz";
 
             //act
-            var result = _fizzBuzz.Calculate(value);
+            var result = FizzBuzz.Calculate(value);
 
             //assert
             result.Should().Be(expectedResult);
         }
 
         [Test]
-        public void Calculate_WhenCalledWithOtherNumber_ReturnsTheNumber([Values(1, 54, 98)] int value)
+        public void Calculate_WhenCalledWithOtherNumber_ReturnsTheNumber([Values(1, 58, 98)] int value)
         {
             //arrange
             var expectedResult = value.ToString();
 
             //act
-            var result = _fizzBuzz.Calculate(value);
+            var result = FizzBuzz.Calculate(value);
 
             //assert
             result.Should().Be(expectedResult);

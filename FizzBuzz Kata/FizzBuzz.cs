@@ -1,12 +1,16 @@
-﻿using System;
-
-namespace FizzBuzz_Kata
+﻿namespace FizzBuzz_Kata
 {
     public class FizzBuzz
     {
-        public string Calculate (int number)
+        public static string Calculate (int number)
         {
-            throw new NotImplementedException();
+            return number switch
+            {
+                _ when number % 5 == 0 && number % 3 == 0 => "FizzBuzz",
+                _ when number % 3 == 0 => "Fizz",
+                _ when number % 5 == 0 => "Buzz",
+                _ => number.ToString()
+            };
         }
     }
 }
